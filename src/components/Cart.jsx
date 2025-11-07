@@ -53,7 +53,7 @@ function Cart(props) {
         if (item) {
           if (item.tipo === "M") {
             const response = await axios.get(
-              "/modulo-pesquisa-preco/1_consultarMaterial?pagina=1&tamanhoPagina=100&codigoItemCatalogo=" +
+              "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?pagina=1&tamanhoPagina=100&codigoItemCatalogo=" +
                 item.itemCodigo
             );
             isLoading(true);
@@ -69,7 +69,7 @@ function Cart(props) {
 
           if (item.tipo === "S") {
             const response = await axios.get(
-              "/modulo-pesquisa-preco/3_consultarServico?pagina=1&codigoItemCatalogo=" +
+              "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/3_consultarServico?pagina=1&codigoItemCatalogo=" +
                 item.itemCodigo
             );
             isLoading(true);
