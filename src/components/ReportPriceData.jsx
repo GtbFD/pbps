@@ -101,33 +101,37 @@ function ReportPriceData(props) {
 
   const downloadPDF = () => {
     isLoading(true);
-    setTimeout(async () => {
-      try {
-        const blob = await pdf(
-          <ReportPricePDF
-            items={items}
-            precos={precos}
-            media={media(precos)}
-            mediana={mediana(precos)}
-            menor={menorValor(precos)}
-            maior={maiorValor(precos)}
-          />
-        ).toBlob();
+    if (items.length !== 0) {
+      setTimeout(async () => {
+        try {
+          const blob = await pdf(
+            <ReportPricePDF
+              items={items}
+              precos={precos}
+              media={media(precos)}
+              mediana={mediana(precos)}
+              menor={menorValor(precos)}
+              maior={maiorValor(precos)}
+            />
+          ).toBlob();
 
-        if (blob != null) {
-          isLoading(false);
+          if (blob != null) {
+            isLoading(false);
+          }
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          //link.target = "_blank";
+          link.download = items[0].descricaoItem + ".pdf";
+          link.click();
+          URL.revokeObjectURL(url);
+        } catch (error) {
+          console.error("Erro ao gerar PDF:", error);
         }
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        //link.target = "_blank";
-        link.download = items[0].descricaoItem + ".pdf";
-        link.click();
-        URL.revokeObjectURL(url);
-      } catch (error) {
-        console.error("Erro ao gerar PDF:", error);
-      }
-    }, 0);
+      }, 0);
+    } else {
+      isLoading(false);
+    }
   };
 
   if (loading) {
