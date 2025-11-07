@@ -67,7 +67,7 @@ function SearchInfo(props) {
 
   const handleCart = (e, itemToCart) => {
     console.log("Adicionar item na cesta");
-    addToCart((cart) => [...cart, itemToCart]);
+    addToCart((cart) => [...(cart ?? []), itemToCart]);
     localStorage.setItem("OPENED_CART", true);
 
     const successMessage = document.getElementById("success-message");
