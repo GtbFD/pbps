@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.middle-top {
+  align-items: center;
+  margin: 10px;
+}
+
+.cart-access {
+  display: flex;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+
+  border: 1px solid #1a73e8;
+  background-color: #ffffff;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.cart-access:hover {
+  background-color: #edecec;
+}
+
+.cart-access-icon {
+  width: 35px;
+  height: 35px;
+}

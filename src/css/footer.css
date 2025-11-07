@@ -1,0 +1,15 @@
+.footer {
+  border: 1px solid #0d5298;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  background-color: #0d5298;
+  width: 100%;
+  z-index: 0;
+  color: white;
+  font-size: 12px;
+}

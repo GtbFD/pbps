@@ -1,0 +1,6 @@
+[Melhorias futuras]:
+Colocar para selecionar unidade de fornecimento dentro da área do carrinho
+Adicionar telas de carregamento de dados (para os preços do item e para gerar o PDF)
+Tratar quando der timeout no sistema (API) do governo (código 400) na hora de buscar os dados do item selecionado no carrinho
+Tratar quando a pesquisa for vazia
+Futuramente criar paginação

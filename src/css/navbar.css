@@ -1,0 +1,13 @@
+.logo {
+  display: flex;
+  width: 180px;
+  height: 55px;
+  margin-left: 50px;
+}
+
+.navbar {
+  display: flex;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  padding: 10px;
+}
