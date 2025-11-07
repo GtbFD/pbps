@@ -120,8 +120,8 @@ function ReportPriceData(props) {
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
         link.href = url;
-        link.target = "_blank";
-        //link.download = items[0].descricaoItem + ".pdf";
+        //link.target = "_blank";
+        link.download = items[0].descricaoItem + ".pdf";
         link.click();
         URL.revokeObjectURL(url);
       } catch (error) {
